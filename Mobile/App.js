@@ -10,6 +10,8 @@ import Autocomplete from './autocomplete-input';
 
 import {countries} from './countries';
 
+import Screen from './src/screen';
+
 const API = 'https://swapi.co/api';
 const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
 
@@ -141,13 +143,14 @@ export default class AwesomeProject extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <Autocomplete
+          <Screen />
+          {/* <Autocomplete
             autoCapitalize="none"
             autoCorrect={false}
             containerStyle={styles.autocompleteContainer}
             data={data.length === 1 && comp(query, data[0].name) ? [] : data}
             defaultValue={query}
-            onChangeText={text => this.setState({ query: text })}
+            onChangeText={query => this.setState({ query })}
             placeholder="Enter Star Wars film title"
             renderItem={({ name, code }) => this.customCell(name, code)}
             indicator={this.state.indicator}
@@ -166,9 +169,6 @@ export default class AwesomeProject extends React.Component {
               // Actions.pop({ refresh: { place: { input: this.props.input, data } } });
               console.log(data, details);
             }}
-            /* getDefaultValue={() => {
-                return this.props.value; // text input default value
-              }} */
             getDefaultValue={() => ''}
             query={{
               // available options: https://developers.google.com/places/web-service/autocomplete
@@ -201,7 +201,7 @@ export default class AwesomeProject extends React.Component {
             // if you want to display only cities
             enablePoweredByContainer={false}
             predefinedPlaces={[homePlace, workPlace]}
-          />
+          /> */}
           <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#99d9f4'>
             <Text style={styles.buttonText}>Save</Text>
           </TouchableHighlight>
